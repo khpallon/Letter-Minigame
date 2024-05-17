@@ -1,5 +1,5 @@
 body{
-    font-family: Secrcode;
+    font-family: Neuropol;
     background-color: aliceblue;
 }
 .letter{
@@ -17,7 +17,7 @@ body{
 }
 #whole{
     background-image: linear-gradient(to right, #01F9C6 , rgb(236, 238, 238));    border-radius: 16px;
-    box-shadow: 10px 10px 5px lightblue;
+    box-shadow: 10px 10px 5px rgb(158, 154, 154);
     max-width: 640px;
     margin: 40px auto;
     padding: 20px;
@@ -27,11 +27,34 @@ body{
     text-align: center;
 
 }
+#radial{
+    background-image: linear-gradient(to right, #01F9C6 , rgb(236, 238, 238));    border-radius: 16px;
+    box-shadow: 10px 10px 5px rgb(158, 154, 154);
+    max-width: 640px;
+    margin: 40px auto;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 0.5s ease-out;
+    text-align: center;
+}
 #restart{
     display:block;
+    font-family: Neuropol;
+    font-size: larger;
+    border-radius:5px;
+    border: 1px solid rgb(0, 0, 0);
+    box-shadow: 2px 2px;
+    background-color: #01F9C6;
+
+}
+
+#restart:hover{
+    background-color: #18a78a;
+    cursor: pointer;
 }
 
 @font-face {
-    font-family: 'Secrcode'; /*a name to be used later*/
+    font-family: 'Neuropol'; /*a name to be used later*/
     src: url('./neuropol\ x\ rg.otf'); /*URL to font*/
 }
