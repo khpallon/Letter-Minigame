@@ -1,15 +1,14 @@
 let alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
-
 let leftkeyboard = 'qwerasdfzxcv'.split('');
-let middlekeyboard = 'tyuighjkbnm'.split('');
+let rightkeyboard = 'tyuighjkbnm'.split('');
 
 let keyCombo = [];
 let up = 0;
 let setTime = 10;
 let letters = 10;
-let gameTimer
-let timeout
-let timeToTimeout
+let gameTimer;
+let timeout;
+let timeToTimeout;
 
 
 
@@ -28,10 +27,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
 });
 
 
-function randomizeLetters(){
+function randomizeLetters(charCombo){
 
     for (let ind = 0; ind < letters; ind++){
-        let key = leftkeyboard[Math.floor(Math.random() * 10)]
+        let key = charCombo[Math.floor(Math.random() * 10)]
         keyCombo.push(key); 
         let character = htmlToElement(`<p id="${ind}" class="letter">${key.toUpperCase()}</p>`)
         document.getElementById("letterContainer").appendChild(character)
@@ -74,19 +73,30 @@ function failGame(){
 }
 
 function restart(){
-    const slider = document.getElementById('slider')
-    const letterSlider = document.getElementById('letterSlider')
+    const letterType = document.getElementById('letterType').value;
+    const charCombo = setAlphabet(letterType);
     document.getElementById("letterContainer").innerHTML = "";
     window.removeEventListener('keyup', pressed)
     this.document.getElementById("whole").style.filter = "brightness(100%)"
     up = 0;
     keyCombo = [];
-    setTime = slider.value;
-    letters = letterSlider.value;
+    setTime = document.getElementById('slider').value;
+    letters = document.getElementById('letterSlider').value;
+    
     clearInterval(gameTimer)
     clearTimeout(timeout)
-    randomizeLetters();
+    randomizeLetters(charCombo);
     
+}
+
+function setAlphabet(letterType){
+    if (letterType === "left"){
+        return leftkeyboard;
+    } else if (letterType === "right"){
+        return rightkeyboard;
+    } else if (letterType === "all"){
+        return alphabet;
+    }
 }
 
 
