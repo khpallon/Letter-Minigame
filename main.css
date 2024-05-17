@@ -36,7 +36,7 @@ body{
     position: relative;
     overflow: hidden;
     animation: fadeIn 0.5s ease-out;
-    text-align: center;
+
 }
 #restart{
     display:block;
@@ -58,3 +58,8 @@ body{
     font-family: 'Neuropol'; /*a name to be used later*/
     src: url('./neuropol\ x\ rg.otf'); /*URL to font*/
 }
+  
+  .slider {
+    width: 25%;
+  }
+  

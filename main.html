@@ -14,7 +14,18 @@
     <p id="timer"></p>   
 </div>
 <div id="radial">
-    <button id="restart" onclick="restart()">START</button>
+    <button id="restart" onclick="restart()">START/RESTART</button>
+    <form id="myForm">
+        <p id="radialValue">Time: 5</p>
+        <input autocomplete="off" type="range" min="5" max="25" value="5" id="slider" class="slider">
+        <p id="letterValue">Letters: 10</p>
+        <input autocomplete="off" type="range" min="10" max="30" value="10" id="letterSlider" class="slider">
+        <select name="cars" id="cars">
+            <option value="left">Left letters</option>
+            <option value="right">Right letters</option>
+            <option value="all">All letters</option>
+        </select>
+    </form>
 </div>
 </body>
 </html>
