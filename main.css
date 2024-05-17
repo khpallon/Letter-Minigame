@@ -1,21 +1,23 @@
+body{
+    font-family: Secrcode;
+    background-color: aliceblue;
+}
 .letter{
     font-size: larger;
-    border: 1px solid green;
-    border-radius:8px;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius:5px;
     background-color: #01F9C6;
     display: inline-block;
     padding: 10px;
     margin: 10px;
-
+    box-shadow: 2px 2px;
 }
 #letterContainer{
-    border: 1px solid red;
     display: inline-block;
 }
 #whole{
-    background-color: #504e4e;
-    border-radius: 16px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    background-image: linear-gradient(to right, #01F9C6 , rgb(236, 238, 238));    border-radius: 16px;
+    box-shadow: 10px 10px 5px lightblue;
     max-width: 640px;
     margin: 40px auto;
     padding: 20px;
@@ -27,4 +29,9 @@
 }
 #restart{
     display:block;
+}
+
+@font-face {
+    font-family: 'Secrcode'; /*a name to be used later*/
+    src: url('./neuropol\ x\ rg.otf'); /*URL to font*/
 }
