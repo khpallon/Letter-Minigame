@@ -1,6 +1,6 @@
 let alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
 let leftkeyboard = 'qwerasdfzxcv'.split('');
-let rightkeyboard = 'tyuighjkbnm'.split('');
+let rightkeyboard = 'tyuighjkbnmopl'.split('');
 
 let keyCombo = [];
 let up = 0;
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 function randomizeLetters(charCombo){
 
     for (let ind = 0; ind < letters; ind++){
-        let key = charCombo[Math.floor(Math.random() * 10)]
+        let key = charCombo[Math.floor(Math.random() * charCombo.length)]
         keyCombo.push(key); 
         let character = htmlToElement(`<p id="${ind}" class="letter">${key.toUpperCase()}</p>`)
         document.getElementById("letterContainer").appendChild(character)
@@ -66,7 +66,7 @@ function timer(){
 
 function failGame(){
     this.document.getElementById(up).style.backgroundColor = "#cc3838";
-    this.document.getElementById("whole").style.filter = "brightness(50%)"
+    this.document.getElementById("whole").style.filter = "brightness(30%)"
     window.removeEventListener('keyup', pressed)
     clearInterval(gameTimer)
     clearTimeout(timeout)
